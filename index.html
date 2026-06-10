@@ -1,1 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nilabh Baishya Travel Blog</title>
 
+<style>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+body {
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+    position: relative;
+    font-size: 3rem;
+    animation: fadeDown 1.5s ease;
+}
+
+.hero p {
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    animation: fadeUp 2s ease;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Blog Card */
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+/* Animations */
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Travel Blog 🌍</h1>
+        <p>Exploring Northeast India – Nature's Hidden Paradise</p>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <div class="card">
+        <h2>Travelling to Northeast India</h2>
+        <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" alt="Northeast India">
+        <p>
+            Northeast India is one of the most beautiful and unexplored regions of the country.
+            With misty mountains, rivers, valleys, and rich culture, it feels like a hidden paradise.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Why Visit Northeast India?</h2>
+        <p>
+            The region includes Assam, Meghalaya, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, and Sikkim.
+            Each state offers unique culture, food, and landscapes perfect for adventure lovers.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Best Time to Visit</h2>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        <p>
+            October to April is the best time to visit. The weather is pleasant and perfect for sightseeing,
+            trekking, and photography.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Must Visit Places</h2>
+        <p>
+            Shillong, Cherrapunji, Tawang, Kaziranga National Park, Gangtok, and Ziro Valley are some of the top destinations.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Final Thoughts</h2>
+        <p>
+            Northeast India is not just a destination, it's an experience filled with peace, beauty, and culture.
+            A perfect escape from busy city life.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Nilabh Baishya Travel Blog | Built with ❤️
+</footer>
+
+<!-- Animation Script -->
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
