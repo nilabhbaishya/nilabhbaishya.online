@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nilabh Baishya Travel Blog</title>
+<title>Explore India's Hidden Natural Paradise</title>
 
 <style>
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,17 +13,40 @@
     font-family: Arial, sans-serif;
 }
 
-/* Background */
 body {
     background: #f4f7fb;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* Hero Section */
+/* NAV TOP RIGHT */
+.nav {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav a {
+    display: block;
+    text-decoration: none;
+    color: #2c3e50;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #0077ff;
+}
+
+/* HERO */
 .hero {
     height: 70vh;
-    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,73 +58,73 @@ body {
 .hero::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0,0,0,0.5);
 }
 
 .hero h1 {
-    position: relative;
     font-size: 3rem;
+    position: relative;
     animation: fadeDown 1.5s ease;
 }
 
 .hero p {
     position: relative;
-    font-size: 1.2rem;
-    margin-top: 10px;
     animation: fadeUp 2s ease;
 }
 
-/* Container */
+/* CONTAINER */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* Blog Card */
-.card {
+/* BLOG WRAPPER */
+.blog {
     background: white;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+    cursor: pointer;
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+/* CONTENT (HIDDEN INITIALLY) */
+.content {
+    display: none;
+    margin-top: 20px;
 }
 
-.card h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+/* SHOW CONTENT */
+.blog.active .content {
+    display: block;
+    animation: fadeUp 0.6s ease;
 }
 
-.card img {
+/* IMAGES */
+img {
     width: 100%;
     border-radius: 10px;
     margin: 15px 0;
 }
 
-/* Animations */
-@keyframes fadeDown {
-    from {opacity: 0; transform: translateY(-30px);}
-    to {opacity: 1; transform: translateY(0);}
+/* SECTION */
+section {
+    margin: 30px 0;
 }
 
+/* ANIMATION */
 @keyframes fadeUp {
     from {opacity: 0; transform: translateY(30px);}
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* Footer */
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -115,76 +137,166 @@ footer {
 
 <body>
 
+<!-- TOP RIGHT MENU -->
+<div class="nav">
+    <strong>List View</strong>
+    <a href="#intro">Intro</a>
+    <a href="#why">Why Visit</a>
+    <a href="#best">Best Time</a>
+    <a href="#places">Destinations</a>
+    <a href="#food">Food</a>
+    <a href="#tips">Tips</a>
+    <a href="#final">Final</a>
+</div>
+
 <!-- HERO -->
 <div class="hero">
     <div>
-        <h1>Travel Blog 🌍</h1>
-        <p>Exploring Northeast India – Nature's Hidden Paradise</p>
+        <h1>Explore India's Hidden Natural Paradise</h1>
+        <p>By - Nilabh baishya</p>
     </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
-    <div class="card">
-        <h2>Travelling to Northeast India</h2>
-        <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" alt="Northeast India">
-        <p>
-            Northeast India is one of the most beautiful and unexplored regions of the country.
-            With misty mountains, rivers, valleys, and rich culture, it feels like a hidden paradise.
-        </p>
-    </div>
+<!-- BLOG CARD -->
+<div class="blog" onclick="toggleBlog()">
 
-    <div class="card">
-        <h2>Why Visit Northeast India?</h2>
-        <p>
-            The region includes Assam, Meghalaya, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, and Sikkim.
-            Each state offers unique culture, food, and landscapes perfect for adventure lovers.
-        </p>
-    </div>
+<h2>NORTH EAST INDIA</h2>
+<p>Discover the hidden beauty of Northeast India, where nature remains pure, peaceful, and untouched by time.</p>
 
-    <div class="card">
-        <h2>Best Time to Visit</h2>
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-        <p>
-            October to April is the best time to visit. The weather is pleasant and perfect for sightseeing,
-            trekking, and photography.
-        </p>
-    </div>
+<div class="content">
 
-    <div class="card">
-        <h2>Must Visit Places</h2>
-        <p>
-            Shillong, Cherrapunji, Tawang, Kaziranga National Park, Gangtok, and Ziro Valley are some of the top destinations.
-        </p>
-    </div>
+<section id="intro">
+<h2>Travelling to Northeast India</h2>
+<img src="https://images.unsplash.com/photo-1668007598394-292ee944e83b?w">
+<p>
+When people think about traveling in India, destinations like Goa, Rajasthan, Kerala, or Himachal Pradesh often come to mind. But tucked away in the eastern corner of the country lies a region that remains one of India's best-kept secrets—Northeast India.
+Blessed with misty mountains, crystal-clear rivers, lush green valleys, vibrant cultures, and warm-hearted people, Northeast India offers an experience unlike anywhere else in the country. If you're looking for an offbeat adventure away from crowded tourist spots, this region deserves a place on your travel bucket list.
+.
+</p>
+</section>
 
-    <div class="card">
-        <h2>Final Thoughts</h2>
-        <p>
-            Northeast India is not just a destination, it's an experience filled with peace, beauty, and culture.
-            A perfect escape from busy city life.
-        </p>
-    </div>
+<section id="why">
+<h2>Why Visit Northeast India?</h2>
+<p>
+The Northeast is made up of eight beautiful states—Assam, Meghalaya, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, and Sikkim. Each state has its own unique charm, traditions, food, and landscapes.
+Whether you enjoy trekking through mountains, exploring waterfalls, witnessing local festivals, or simply relaxing in nature, Northeast India has something for everyone.
+.
+</p>
+</section>
 
+<section id="best">
+<h2>Best Time to Visit</h2>
+<p>
+The ideal time to visit Northeast India is between October and April.
+<P> 
+<h2 style="font-size: 15px; text-decoration: underline;">
+  October to November
+  </h2>
+This is one of the most beautiful seasons. The monsoon has ended, the skies are clear, and the landscapes are fresh and green. It's perfect for sightseeing and photography.
+<h2 style="font-size: 15px; text-decoration: underline;">
+  December to February
+  </h2>
+Winter brings cool and pleasant weather. Snow can be seen in higher-altitude regions like Tawang and parts of Sikkim. This season is great for mountain lovers.
+<h2 style="font-size: 15px; text-decoration: underline;">
+  March to April
+  </h2>
+Spring transforms the region into a colorful paradise. Flowers bloom across the hills, temperatures remain comfortable, and outdoor activities become even more enjoyable.
+<p>
+<h2 style="font-size: 15px;">
+    When to Avoid?
+  </h2>
+The monsoon season, from June to September, can bring heavy rainfall, landslides, and travel disruptions in some areas. While the scenery is stunning during this time, it may not be ideal for first-time visitors.
+.
+</p>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Northeast India</title>
+</head>
+
+<body>
+
+<h1>Must-Visit Destinations</h1>
+
+<ul>
+  <li>
+    <h3>Shillong, Meghalaya</h3>
+    <p>Known as the "Scotland of the East," Shillong offers rolling hills, pleasant weather, waterfalls, and a lively local culture. Don't miss Elephant Falls and Umiam Lake.</p>
+  </li>
+
+  <li>
+    <h3>Cherrapunji, Meghalaya</h3>
+    <p>Famous for being one of the wettest places on Earth, Cherrapunji is home to breathtaking waterfalls, caves, and living root bridges.</p>
+  </li>
+
+  <li>
+    <h3>Tawang, Arunachal Pradesh</h3>
+    <p>Surrounded by snow-capped mountains, Tawang is peaceful and known for its monasteries and beautiful views.</p>
+  </li>
+
+  <li>
+    <h3>Kaziranga National Park, Assam</h3>
+    <p>Home to the world's largest population of one-horned rhinoceroses. Perfect for wildlife safari experiences.</p>
+  </li>
+
+  <li>
+    <h3>Gangtok, Sikkim</h3>
+    <p>A mix of modern city life and Himalayan beauty with amazing views, monasteries, and lakes nearby.</p>
+  </li>
+
+  <li>
+    <h3>Ziro Valley, Arunachal Pradesh</h3>
+    <p>Peaceful valley known for nature, tribal culture, and the famous Ziro Music Festival.</p>
+  </li>
+</ul>
+</body>
+  </html>
+
+<section id="food">
+<h2>Food You Must Try</h2>
+<p>
+• Momos & Thukpa<br>
+• Assamese Thali<br>
+• Smoked Pork (Nagaland)<br>
+• Jadoh (Meghalaya)<br>
+• Bamboo Shoot Dishes
+</p>
+</section>
+
+<section id="tips">
+<h2>Travel Tips</h2>
+<p>
+Carry warm clothes, cash, respect local culture, and travel slowly to enjoy nature.
+</p>
+</section>
+
+<section id="final">
+<h2>Final Thoughts</h2>
+<p>
+Northeast India is not just a destination; it's an experience. From the emerald hills of Meghalaya to the majestic mountains of Arunachal Pradesh and the vibrant cultures spread across the region, every journey here leaves lasting memories.
+If you're seeking untouched beauty, authentic experiences, and a deeper connection with nature, Northeast India might just become your favorite corner of India.
+Pack your bags, keep your camera ready, and prepare to discover a side of India that many travelers have yet to explore.
+.
+</p>
+</section>
+
+</div>
+</div>
 </div>
 
 <footer>
-    © 2026 Nilabh Baishya Travel Blog | Built with ❤️
+© 2026 Nilabh Baishya Travel Blog | Built with ❤️
 </footer>
 
-<!-- Animation Script -->
 <script>
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            card.classList.add('show');
-        }
-    });
-});
+function toggleBlog() {
+    document.querySelector('.blog').classList.toggle('active');
+}
 </script>
 
 </body>
